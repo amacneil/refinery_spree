@@ -110,7 +110,7 @@ Update [lib/spree/authentication_helpers.rb](https://github.com/adrianmacneil/re
 
 Open http://localhost:3000/refinery and create an admin user for yourself. Then add yourself as a Spree admin:
 
-    rails c
+    rails console
     Refinery::User.first.spree_roles << Spree::Role.find_or_create_by_name("admin")
 
 All done! Now you can access Refinery at http://localhost:3000/refinery and Spree at http://localhost:3000/admin
