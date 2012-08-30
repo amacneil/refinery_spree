@@ -72,12 +72,12 @@ Update [config/initializers/spree.rb](https://github.com/adrianmacneil/refinery_
 
     Spree.user_class = "Refinery::User"
 
-Run generator to add Spree support to Refinery user model (will add 3 new columns to refinery_users table)
+Run generator to add Spree support to Refinery's user model (will add 3 new columns to refinery_users table)
 
     rails g spree:custom_user Refinery::User
     rake db:migrate
 
-Update [lib/spree/authentication_helpers.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/lib/spree/authentication_helpers.rb) to use current_refinery_user and Refinery login/signup routes
+Update [lib/spree/authentication_helpers.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/lib/spree/authentication_helpers.rb) to use `current_refinery_user` and Refinery's login/signup routes
 
     module Spree
       module AuthenticationHelpers
