@@ -11,4 +11,5 @@ Spree.config do |config|
   # config.site_name = "Spree Demo Site"
 end
 
-Spree.user_class = "Spree::LegacyUser"
+Spree.user_class = "Refinery::User"
+require 'spree/authentication_helpers'
