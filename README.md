@@ -10,6 +10,8 @@ For this reason, it seemed easiest to configure Spreee to use RefineryCMS for au
 
 ## Installation
 
+### First steps
+
 Create a new Refinery app:
 
     gem install refinerycms
@@ -26,6 +28,8 @@ Install Spree
 Update [config/routes.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/routes.rb) to use Refinery for the home page
 
     root :to => "refinery/pages#home"
+    
+### Bug fixes
 
 RefineryCMS uses WillPaginage for pagination, while Spree uses Kaminari. Unfortunately, the two don't cooperate,
 and you will see the following error when you try to view your Spree products list:
@@ -61,6 +65,8 @@ I'm not exactly sure what causes this, but it's easy to fix. Simply add the foll
     end
     
 (see [https://github.com/resolve/refinerycms/issues/1804#issuecomment-8038184](https://github.com/resolve/refinerycms/issues/1804#issuecomment-8038184))
+
+### Tell Spree to use RefineryCMS for authentication
 
 Update [config/initializers/spree.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/initializers/spree.rb) to use Refinery authentication
 
