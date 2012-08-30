@@ -1,0 +1,6 @@
+/.bundle
+/db/*.sqlite3
+/tmp
+.DS_Store
+*.log
+*.pid
