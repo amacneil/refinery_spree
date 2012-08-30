@@ -16,3 +16,5 @@ Install Spree
 Update routes.rb
 
     mount Spree::Core::Engine, :at => '/spree'
+
+Add WillPaginate initializer monkey patch
