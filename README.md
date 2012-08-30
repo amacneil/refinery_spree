@@ -17,7 +17,7 @@ Update routes.rb to use Refinery for the home page
 
     root :to => "refinery/pages#home"
 
-Add WillPaginate initializer monkey patch to config/initializers/will_paginate.rb
+Add WillPaginate initializer monkey patch to [config/initializers/will_paginate.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/initializers/will_paginate.rb)
 
     if defined?(WillPaginate)
       module WillPaginate
@@ -37,7 +37,7 @@ Fix refinery_user? error message:
       helper_method :refinery_user?
     end
 
-Update config/initializers/spree.rb to use Refinery authentication
+Update [config/initializers/spree.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/initializers/spree.rb) to use Refinery authentication
 
     Spree.user_class = "Refinery::User"
 
@@ -46,7 +46,7 @@ Run generator to add Spree support to Refinery user model (will add 3 new column
     rails g spree:custom_user Refinery::User
     rake db:migrate
 
-Update lib/spree/authentication_helpers.rb to use current_refinery_user and Refinery login/signup routes
+Update [lib/spree/authentication_helpers.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/lib/spree/authentication_helpers.rb) to use current_refinery_user and Refinery login/signup routes
 
     module Spree
       module AuthenticationHelpers
