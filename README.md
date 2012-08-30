@@ -1,6 +1,6 @@
 # RefineryCMS & Spree Quick Start
 
-These are the steps I followed to get RefineryCMS 2.0 and Spree 1.2 playing nicely together.
+These are the steps I followed to get [RefineryCMS](http://refinerycms.com/) 2.0 and [Spree](http://spreecommerce.com/) 1.2 playing nicely together.
 
 RefineryCMS and Spree both use Devise for authentication, but they are both completely separate (so you must have
 separate user accounts for each). In Spree 1.2, authentication has been moved to a separate gem, allowing you
@@ -17,7 +17,7 @@ Create a new Refinery app:
     gem install refinerycms
     refinerycms refinery_spree
 
-Add Spree 1.2 to the [Gemfile](https://github.com/adrianmacneil/refinery_spree/blob/master/Gemfile):
+Add Spree 1.2 (currently in development) to the [Gemfile](https://github.com/adrianmacneil/refinery_spree/blob/master/Gemfile):
 
     gem 'spree', git: 'git://github.com/spree/spree.git', branch: '1-2-stable'
 
