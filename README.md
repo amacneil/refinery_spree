@@ -119,3 +119,4 @@ All done! Now you can access Refinery at http://localhost:3000/refinery and Spre
 
 * https://github.com/spree/spree/pull/1512
 * http://ryanbigg.com/spree-guides/authentication.html
+* https://github.com/resolve/refinerycms/issues/1804
