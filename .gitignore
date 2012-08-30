@@ -1,5 +1,6 @@
 /.bundle
 /db/*.sqlite3
+/public/spree
 /tmp
 .DS_Store
 *.log
