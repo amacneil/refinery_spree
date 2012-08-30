@@ -8,7 +8,9 @@ it's still quite a lot of work to use your own authentication.
 
 For this reason, it seemed easiest to configure Spreee to use RefineryCMS for authentication.
 
-Install Refinery:
+## Installation
+
+Create a new Refinery app:
 
     gem install refinerycms
     refinerycms refinery_spree
@@ -25,7 +27,9 @@ Update [config/routes.rb](https://github.com/adrianmacneil/refinery_spree/blob/m
 
     root :to => "refinery/pages#home"
 
-Add WillPaginate initializer monkey patch to [config/initializers/will_paginate.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/initializers/will_paginate.rb)
+RefineryCMS uses WillPaginage for pagination, while Spree uses Kaminari. Unfortunately, the two don't cooperate.
+Add the following monkey patch to [config/initializers/will_paginate.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/initializers/will_paginate.rb)
+to fix this error:
 
     if defined?(WillPaginate)
       module WillPaginate
@@ -38,7 +42,12 @@ Add WillPaginate initializer monkey patch to [config/initializers/will_paginate.
       end
     end
 
-Fix refinery_user? error message:
+When you visit a RefineryCMS page, you will see the following unhelpful error message:
+
+    NoMethodError in Refinery/pages#home
+    undefined method `refinery_user?' for #<#<Class:0x007f8a2c762bf0>:0x007f8a2f2a42f0>
+    
+I'm not exactly sure what causes this, but it's easy to fix (see [RefineryCMS Issue #1804](https://github.com/resolve/refinerycms/issues/1804)). Simply add the following line to [app/controllers/application_controller.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/app/controllers/application_controller.rb):
 
     class ApplicationController < ActionController::Base
       protect_from_forgery
@@ -91,3 +100,8 @@ Open http://localhost:3000/refinery and create an admin user for yourself. Then 
     Refinery::User.first.spree_roles << Spree::Role.find_or_create_by_name("admin")
 
 All done! Now you can access Refinery at http://localhost:3000/refinery and Spree at http://localhost:3000/admin
+
+## Helpful links:
+
+* https://github.com/spree/spree/pull/1512
+* http://ryanbigg.com/spree-guides/authentication.html
