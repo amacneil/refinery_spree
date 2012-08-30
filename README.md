@@ -13,7 +13,7 @@ Install Spree
 
     rails g spree:install
 
-Update routes.rb to use Refinery for the home page
+Update [config/routes.rb](https://github.com/adrianmacneil/refinery_spree/blob/master/config/routes.rb) to use Refinery for the home page
 
     root :to => "refinery/pages#home"
 
