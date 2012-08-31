@@ -4,7 +4,7 @@ These are the steps I followed to get [RefineryCMS 2.0](http://refinerycms.com/)
 
 RefineryCMS and Spree both use Devise for authentication, but they are both completely separate (so you must have
 separate user accounts for each). In Spree 1.2, authentication has been moved to a separate gem, allowing you
-to use your own authentication. As of Refinery 2.0 it's still quite a lot of work to use your own authentication.
+to use your own authentication. As of Refinery 2.0 it's still [quite a lot of work](http://refinerycms.com/guides/with-an-existing-rails-31-devise-app) to roll your own authentication.
 
 For this reason, it seemed easiest to configure Spreee to use RefineryCMS for authentication.
 
