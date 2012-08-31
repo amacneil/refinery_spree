@@ -8,6 +8,8 @@ to use your own authentication. As of Refinery 2.0 it's still [quite a lot of wo
 
 For this reason, it seemed easiest to configure Spreee to use RefineryCMS for authentication.
 
+**UPDATE:** I moved this code into a a gem, to save you some time. See [spree-refinery-authentication](https://github.com/adrianmacneil/spree-refinery-authentication).
+
 ## Installation
 
 ### First steps
